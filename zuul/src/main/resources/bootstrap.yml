@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: zuul
+  profiles:
+    active: native
+server:
+  port: 8888
