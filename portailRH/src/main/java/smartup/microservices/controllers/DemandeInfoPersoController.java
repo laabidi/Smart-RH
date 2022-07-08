@@ -27,21 +27,19 @@ public class DemandeInfoPersoController {
 	@PostMapping("/add-DemandeInfoPerso")
 	@ResponseBody
 	public DemandeInfoPerso addDemandeInfoPerso (@RequestBody DemandeInfoPerso dc){
-		DemandeInfoPerso DemandeInfoPerso = dips.addDemandeInfoPerso(dc);
-		return DemandeInfoPerso;
+		return dips.addDemandeInfoPerso(dc);
 		}
 	
 	
-	// http://localhost:8081/api/smartRH/retrieve-all-DemandeInfoPerso
+	
 	@GetMapping("/retrieve-all-DemandeInfoPerso")
 	//@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@ResponseBody
 	public List<DemandeInfoPerso> getDemandeInfoPersos() {
-		List<DemandeInfoPerso> list = dips.retrieveAllDemandeInfoPersos();
-		return list;
+		return dips.retrieveAllDemandeInfoPersos();
 		}
 	
-	// http://localhost:8081/api/smartRH/retrieve-DemandeInfoPerso/{DemandeInfoPerso-id}
+	
 	@GetMapping("/retrieve-DemandeInfoPerso/{DemandeInfoPerso-id}")
 	@ResponseBody
 	public Optional<DemandeInfoPerso> retrieveDemandeInfoPerso(@PathVariable("DemandeInfoPerso-id") String DemandeInfoPersoId){

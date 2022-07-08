@@ -30,8 +30,7 @@ public class DemandeFraisProfesController {
 	@PostMapping("/add-DemandeFraisProfes")
 	@ResponseBody
 	public DemandeFraisProfes addDemandeFraisProfes (@RequestBody DemandeFraisProfes dc){
-		DemandeFraisProfes DemandeFraisProfes = dfps.addDemandeFraisProfes(dc);
-		return DemandeFraisProfes;
+		return dfps.addDemandeFraisProfes(dc);
 		}
 	
 	
@@ -40,11 +39,10 @@ public class DemandeFraisProfesController {
 	//@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@ResponseBody
 	public List<DemandeFraisProfes> getDemandeFraisProfess() {
-		List<DemandeFraisProfes> list = dfps.retrieveAllDemandeFraisProfess();
-		return list;
+		return dfps.retrieveAllDemandeFraisProfess();
 		}
 	
-	// http://localhost:8081/api/smartRH/retrieve-DemandeFraisProfes/{DemandeFraisProfes-id}
+	
 	@GetMapping("/retrieve-DemandeFraisProfes/{DemandeFraisProfes-id}")
 	@ResponseBody
 	public Optional<DemandeFraisProfes> retrieveDemandeFraisProfes(@PathVariable("DemandeFraisProfes-id") String DemandeFraisProfesId){

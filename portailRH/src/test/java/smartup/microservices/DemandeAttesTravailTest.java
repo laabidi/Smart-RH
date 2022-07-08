@@ -1,6 +1,6 @@
 package smartup.microservices;
 
-import java.util.List;
+
 
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -19,7 +19,7 @@ import smartup.microservices.services.DemandeCongeServiceImpl;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class DemandeAttesTravailTest {
+class DemandeAttesTravailTest {
 
 private static final Logger l = LogManager.getLogger(DemandeCongeServiceImpl.class);
 	
@@ -29,7 +29,7 @@ private static final Logger l = LogManager.getLogger(DemandeCongeServiceImpl.cla
 	DemandeAttestTravailRepository drep;
 	
 	@Test
-	public void addDemandeCongeTest()throws ParseException{
+	 void addDemandeCongeTest()throws ParseException{
 			
 		
 	  DemandeAttesTravail e = new DemandeAttesTravail();
@@ -38,13 +38,7 @@ private static final Logger l = LogManager.getLogger(DemandeCongeServiceImpl.cla
 	
 
 	}
-  @Test
-	public void testRetrieveAllDemandeAttestTravail() {
-		List<DemandeAttesTravail> d = dats.retrieveAllDemandeAttesTravails();
-	
-		l.log(Level.INFO, () ->"retrieve Demande Attestation Travail : " +d);
-	}
-  
+ 
   
   
 }

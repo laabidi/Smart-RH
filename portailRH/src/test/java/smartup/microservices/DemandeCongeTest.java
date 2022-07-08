@@ -3,7 +3,7 @@ package smartup.microservices;
 
 
 
-import static org.junit.Assert.assertNotNull;
+
 
 import java.util.List;
 
@@ -25,7 +25,7 @@ import smartup.microservices.services.DemandeCongeServiceImpl;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class DemandeCongeTest {
+class DemandeCongeTest {
 	
 private static final Logger l = LogManager.getLogger(DemandeCongeServiceImpl.class);
 	
@@ -37,36 +37,29 @@ private static final Logger l = LogManager.getLogger(DemandeCongeServiceImpl.cla
 	
 	
 	  @Test
-		public void addDemandeCongeTest()throws ParseException{
+		void addDemandeCongeTest()throws ParseException{
 				
 			
 		  DemandeConge e = new DemandeConge();
 		  dcs.addDemandeConge(e);
-		l.log(Level.INFO, () ->"retrieve DemandeConge : " +e);
+		l.log(Level.INFO, () ->"ajout DemandeConge : " +e);
 		
 
 		}
 	  
 	  
 	  
-	 // @Test
-		//public void testaddemploye() {
-		//  DemandeConge e = new DemandeConge();
-		//dcs.addDemandeConge(e);
-		//assertNotNull(e.getEmployerInfosRhDemTypeId());
-		//l.info("Employe added successfuly ");
-		
-		//}
+	
 	  
 	  @Test
-		public void testRetrieveAllDemandeConges() {
+		void testRetrieveAllDemandeConges() {
 			List<DemandeConge> d = dcs.retrieveAllDemandeConges();
 		
 			l.log(Level.INFO, () ->"retrieve Demande Conge : " +d);
 		}
 	  
-	  @Test
-	  public void testUpdateDemandeConge() {
+	 @Test
+	 void testUpdateDemandeConge() {
 			DemandeConge e= dcs.getDemandeCongeById(1);
 			e.setEmployerCongesDemStatut("UP");
 			DemandeConge es= dcs.updateDemandeConge(e);
@@ -75,18 +68,12 @@ private static final Logger l = LogManager.getLogger(DemandeCongeServiceImpl.cla
 	  
 	  
 	  
-	//  @Test
-		//public void testdeleteDemandeConge(){
-		//deleteDemandeCongeById(1);	
-		  
-		//}
-	  @Test
-		public void testDeleteDemandeConge() {
-			DemandeConge emp = new DemandeConge();
-			assertNotNull(emp);
-			drep.deleteById((long) 1);
-			l.info("deleted successfuly" );
+	 @Test
+		void testdeleteDemandeConge(){
+		drep.deleteById(1L);	
 		}
+		  
+		
 		}
 	 
 	   

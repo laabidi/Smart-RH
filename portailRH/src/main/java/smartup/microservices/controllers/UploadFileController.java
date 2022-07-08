@@ -21,10 +21,7 @@ public class UploadFileController {
 	@Autowired
 	private UploadFileService ufs;
 
-	@PostMapping("/upload/local")
-	public void uploadLocal(@RequestParam("file") MultipartFile multipartFile) {
-
-	}
+	
 
 	@PostMapping("/upload/db")
 	public ResponseFile uploadDb(@RequestParam("file") MultipartFile multipartFile) {
